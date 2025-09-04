@@ -1,0 +1,20 @@
+name: First Workflow   # Workflow name
+
+on: 
+  push:               # Trigger: when code is pushed
+    branches:
+      - main
+
+jobs:
+  build:              # Job name
+    runs-on: ubuntu-latest   # Runner (machine)
+    steps:            # Steps inside the job
+
+      - name: Checkout code
+        uses: actions/checkout@v3   # Action to get repo code
+
+      - name: Print Hello
+        run: echo "Hello, GitHub Actions!"   # Run command
+
+      - name: Show current folder
+        run: ls -la   # Run another command
